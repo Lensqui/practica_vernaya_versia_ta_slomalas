@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="welcome_title">ДОБРО \nПОЖАЛОВАТЬ</string>
+    <string name="start_journey_title">Начнем \nпутешествие</string>
+    <string name="you_have_power_title">У Вас Есть Сила, \nЧтобы</string>
+    <string name="start_journey_subtitle">Умная, великолепная и модная коллекция. \nИзучите сейчас</string>
+    <string name="you_have_power_subtitle">В вашей комнате много красивых и привлекательных растений</string>
+    <string name="next_button">Далее</string>
+    <string name="start_button">Начать</string>
+    <string name="welcome_subtitle" translatable="false"></string>
+    <string name="sign_up_title">Регистрация</string>
+    <string name="username_hint">Имя пользователя</string>
+    <string name="password_hint">Пароль</string>
+    <string name="confirm_password_hint">Подтвердите пароль</string>
+    <string name="sign_up_button">Зарегистрироваться</string>
+    <string name="already_have_account"><![CDATA[Уже есть аккаунт? <b>Войти</b>]]></string>
+    <string name="login_title">Вход</string>
+    <string name="login_button">Войти</string>
+    <string name="dont_have_account"><![CDATA[Нет аккаунта? <b>Зарегистрироваться</b>]]></string>
+    <string name="forgot_password">Забыли Пароль</string>
+    <string name="account_recovery">Восстановление Аккаунта</string>
+    <string name="enter_your_email">Введите ваш email</string>
+    <string name="verify_email">Проверить Email</string>
+    <string name="invalid_email">Неверный email адрес</string>
+    <string name="otp_sent_message">Мы отправили код восстановления пароля на вашу электронную почту.</string>
+    <string name="check_spam_folder">Проверьте папку "Спам", если письмо не пришло.</string>
+    <string name="notification_title">Проверьте Ваш Email</string>
+    <string name="notification_message">Мы отправили код восстановления пароля.\nПроверьте папку "Спам" если письмо не пришло.</string>
+    <string name="otp_verification_title">Проверка OTP</string>
+    <string name="otp_verification_subtitle">Введите 6-значный код, отправленный на вашу почту</string>
+    <string name="otp_hint">Введите OTP</string>
+    <string name="verify_otp">Подтвердить</string>
+    <string name="invalid_otp">Неверный OTP код</string>
+    <string name="resend_code">Запросить код повторно</string>
+    <string name="card_balance">₽3.469.52</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+</resources>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnBack"
+        android:src="@drawable/circle_back_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:padding="16dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Extra card"
+        android:id="@+id/txtTitle"
+        android:textSize="24sp"
+        android:fontFamily="@font/new_peninim_mt"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="16dp"/>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/for_delete"
+        android:padding="19dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="11dp"
+        android:id="@+id/handba"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <LinearLayout
+        android:layout_margin="13dp"
+        android:id="@+id/bank_card"
+        android:layout_width="327dp"
+        android:layout_height="204dp"
+        android:background="@drawable/visa_bank_card"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtTitle"
+        android:paddingTop="25dp"
+        android:paddingLeft="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/ownerOfCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SoCard"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins_light"
+            android:textSize="24dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:text="•••• •••• •••• ••••"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins_medium"
+            android:layout_marginTop="12dp"/>
+
+        <TextView
+            android:id="@+id/cardNumber"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:text="card holder name"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins_light"/>
+
+        <TextView
+            android:id="@+id/balanceBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="••• ••••"
+            android:textColor="@color/white"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/poppins_medium"/>
+
+        <TextView
+            android:id="@+id/cardDate"
+            android:layout_marginTop="-65dp"
+            android:layout_marginLeft="130dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:text="Expiry date"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins_light"/>
+
+        <TextView
+            android:id="@+id/Date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="••/••••"
+            android:layout_marginBottom="-30dp"
+            android:layout_marginTop="12dp"
+            android:textColor="@color/white"
+            android:layout_marginLeft="130dp"
+            android:fontFamily="@font/poppins_medium"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:src="@drawable/visa_32"
+            android:layout_marginLeft="230dp"
+            android:visibility="gone"
+            android:layout_marginTop="-5dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Credit card"
+        android:id="@+id/spisockcardforbottom"
+        app:layout_constraintTop_toBottomOf="@id/bank_card"
+        app:layout_constraintStart_toStartOf="@id/btnBack"
+        android:padding="16dp"
+        android:textSize="18sp"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spisokcard"
+        app:layout_constraintTop_toBottomOf="@id/spisockcardforbottom"
+        app:layout_constraintStart_toStartOf="@id/spisockcardforbottom"
+        android:padding="16dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/addNewCardButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add new card"
+        android:textSize="14sp"
+        app:cornerRadius="24dp"
+        app:backgroundTint="#1E90FF"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

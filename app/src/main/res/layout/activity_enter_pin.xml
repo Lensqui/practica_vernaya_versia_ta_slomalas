@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Введите PIN-код"
+        android:textColor="@color/black"
+        android:fontFamily="@font/new_peninim_mt"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"/>
+
+
+    <TextView
+        android:id="@+id/subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Введите ваш PIN-код для входа"
+        android:textColor="@color/gray"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+
+    <LinearLayout
+        android:id="@+id/pinDotsLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/subtitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp">
+
+        <View
+            android:id="@+id/dot1"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:background="@drawable/pin_dot"
+            android:layout_marginEnd="8dp"/>
+
+        <View
+            android:id="@+id/dot2"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:background="@drawable/pin_dot"
+            android:layout_marginEnd="8dp"/>
+
+        <View
+            android:id="@+id/dot3"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:background="@drawable/pin_dot"
+            android:layout_marginEnd="8dp"/>
+
+        <View
+            android:id="@+id/dot4"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:background="@drawable/pin_dot"/>
+    </LinearLayout>
+
+
+    <EditText
+        android:id="@+id/pinInput"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:inputType="numberPassword"
+        android:maxLength="4"
+        android:imeOptions="actionDone"
+        android:background="@null"
+        app:layout_constraintTop_toBottomOf="@id/pinDotsLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <GridLayout
+        android:id="@+id/keyboardLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:rowCount="4"
+        app:layout_constraintTop_toBottomOf="@id/pinDotsLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="48dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/key1"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:text="1"
+            android:textSize="24sp"
+            android:textColor="@android:color/black"
+            android:background="@drawable/keyboard_button_background"
+            android:layout_margin="8dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/key2"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:text="2"
+            android:textSize="24sp"
+            android:textColor="@android:color/black"
+            android:background="@drawable/keyboard_button_background"
+            android:layout_margin="8dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/key3"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:text="3"
+            android:textSize="24sp"
+            android:textColor="@android:color/black"
+            android:background="@drawable/keyboard_button_background"
+            android:layout_margin="8dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/key4"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:text="4"
+            android:textSize="24sp"
+            android:textColor="@android:color/black"
+            android:background="@drawable/keyboard_button_background"
+            android:layout_margin="8dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/key5"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:text="5"
+            android:textSize="24sp"
+            android:textColor="@android:color/black"
+            android:background="@drawable/keyboard_button_background"
+            android:layout_margin="8dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/key6"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:text="6"
+            android:textSize="24sp"
+            android:textColor="@android:color/black"
+            android:background="@drawable/keyboard_button_background"
+            android:layout_margin="8dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/key7"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:text="7"
+            android:textSize="24sp"
+            android:textColor="@android:color/black"
+            android:background="@drawable/keyboard_button_background"
+            android:layout_margin="8dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/key8"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:text="8"
+            android:textSize="24sp"
+            android:textColor="@android:color/black"
+            android:background="@drawable/keyboard_button_background"
+            android:layout_margin="8dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/key9"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:text="9"
+            android:textSize="24sp"
+            android:textColor="@android:color/black"
+            android:background="@drawable/keyboard_button_background"
+            android:layout_margin="8dp"/>
+
+        <Space
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_margin="8dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/key0"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:text="0"
+            android:textSize="24sp"
+            android:textColor="@android:color/black"
+            android:background="@drawable/keyboard_button_background"
+            android:layout_margin="8dp"/>
+
+        <ImageButton
+            android:id="@+id/keyDelete"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/erase6"
+            android:background="@color/white"
+            android:layout_margin="8dp"/>
+    </GridLayout>
+
+    <TextView
+        android:id="@+id/forgotPin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Забыли PIN-код?"
+        android:textColor="@color/blue_90"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

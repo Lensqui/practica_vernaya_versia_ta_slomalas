@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:background="@drawable/circle_back_icon"
+        android:src="@drawable/vectorn_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="Back"/>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/otp_verification_title"
+        android:gravity="center"
+        android:fontFamily="@font/new_peninim_mt"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnBack"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/subtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/otp_verification_subtitle"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:textColor="@color/gray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/otpTitle"
+        android:text="OTP Код"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toTopOf="@id/otpCellsLayout"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/otpCellsLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/subtitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp">
+
+        <EditText
+            android:id="@+id/otp_cell_1"
+            android:layout_width="50dp"
+            android:layout_height="73dp"
+            android:maxLength="1"
+            android:inputType="number"
+            android:background="@drawable/neutral_border"
+            android:gravity="center"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"/>
+
+        <EditText
+            android:id="@+id/otp_cell_2"
+            android:layout_width="50dp"
+            android:layout_height="73dp"
+            android:maxLength="1"
+            android:inputType="number"
+            android:background="@drawable/neutral_border"
+            android:gravity="center"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"/>
+
+        <EditText
+            android:id="@+id/otp_cell_3"
+            android:layout_width="50dp"
+            android:layout_height="73dp"
+            android:maxLength="1"
+            android:inputType="number"
+            android:background="@drawable/neutral_border"
+            android:gravity="center"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"/>
+
+        <EditText
+            android:id="@+id/otp_cell_4"
+            android:layout_width="50dp"
+            android:layout_height="73dp"
+            android:maxLength="1"
+            android:inputType="number"
+            android:background="@drawable/neutral_border"
+            android:gravity="center"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"/>
+
+        <EditText
+            android:id="@+id/otp_cell_5"
+            android:layout_width="50dp"
+            android:layout_height="73dp"
+            android:maxLength="1"
+            android:inputType="number"
+            android:background="@drawable/neutral_border"
+            android:gravity="center"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"/>
+
+        <EditText
+            android:id="@+id/otp_cell_6"
+            android:layout_width="50dp"
+            android:layout_height="73dp"
+            android:maxLength="1"
+            android:inputType="number"
+            android:background="@drawable/neutral_border"
+            android:gravity="center"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/timerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00:30"
+        android:textSize="14sp"
+        android:textColor="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/otpCellsLayout"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="20dp"/>
+
+    <TextView
+        android:id="@+id/resendCodeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/resend_code"
+        android:textSize="14sp"
+        android:textColor="@color/tipo_hint"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/otpCellsLayout"
+        android:layout_marginTop="28dp"
+        android:layout_marginStart="20dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

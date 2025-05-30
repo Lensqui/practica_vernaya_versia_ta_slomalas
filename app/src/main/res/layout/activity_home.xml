@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:layout_marginBottom="?attr/actionBarSize">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F5F5F5">
+
+                <ImageView
+                    android:id="@+id/menu_on_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/menu_on_home"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:padding="26dp"/>
+
+                <TextView
+                    android:id="@+id/txtTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Главная"
+                    android:textSize="24sp"
+                    android:fontFamily="@font/new_peninim_mt"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:padding="16dp"/>
+
+                <ImageButton
+                    android:id="@+id/handba"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/for_cart_not_dot"
+                    android:padding="19dp"
+                    android:layout_marginTop="11dp"
+                    android:layout_marginEnd="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <EditText
+                    android:id="@+id/editexttext2"
+                    android:layout_width="320dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="52dp"
+                    android:textSize="16sp"
+                    android:hint="Поиск"
+                    android:drawableStart="@drawable/search_icon"
+                    android:drawablePadding="8dp"
+                    android:padding="8dp"
+                    android:textColor="#9aa2aa"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:background="@drawable/poisk"
+                    app:layout_constraintTop_toBottomOf="@+id/txtTitle"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"/>
+
+                <ImageButton
+                    android:id="@+id/filters"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/crug"
+                    android:padding="16dp"
+                    android:src="@drawable/filters_32"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginStart="15dp"
+                    app:layout_constraintStart_toEndOf="@id/editexttext2"
+                    app:layout_constraintTop_toBottomOf="@id/handba"/>
+
+                <TextView
+                    android:id="@+id/textCategories"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Категории"
+                    android:textColor="@color/black"
+                    android:textStyle="normal"
+                    android:textSize="16sp"
+                    app:layout_constraintTop_toBottomOf="@id/editexttext2"
+                    android:padding="16dp"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/buttons_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/textCategories"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:padding="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/txtAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Все"
+                    android:padding="16dp"
+                    android:textColor="@color/facebook_blue"
+                    app:layout_constraintTop_toBottomOf="@id/buttons_recycler_view"
+                    app:layout_constraintEnd_toEndOf="@id/filters"/>
+
+                <TextView
+                    android:id="@+id/textPopular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Популярное"
+                    android:textColor="@color/black"
+                    android:textStyle="normal"
+                    android:textSize="16sp"
+                    app:layout_constraintTop_toBottomOf="@id/buttons_recycler_view"
+                    android:padding="16dp"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/popularView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/textPopular"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:padding="16dp"/>
+
+                <TextView
+                    android:id="@+id/textSpecial"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Акции"
+                    android:textColor="@color/black"
+                    android:textStyle="normal"
+                    android:textSize="16sp"
+                    app:layout_constraintTop_toBottomOf="@id/popularView"
+                    android:padding="16dp"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/txtAll2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Все"
+                    android:padding="16dp"
+                    android:textColor="@color/facebook_blue"
+                    app:layout_constraintTop_toBottomOf="@id/popularView"
+                    app:layout_constraintEnd_toEndOf="@id/filters"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/SpecialView"
+                    android:layout_width="match_parent"
+                    android:foregroundGravity="center"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/textSpecial"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:padding="16dp"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <include
+            android:id="@+id/drawer_menu"
+            layout="@layout/nav_drawer_layout"
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"/>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+    <!-- Навигационная панель фиксирована внизу -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottom_navigation_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F5F5F5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_cart"
+            android:backgroundTint="#2196F3"
+            app:layout_constraintTop_toTopOf="@id/bottom_navigation"
+            app:layout_constraintBottom_toBottomOf="@id/bottom_navigation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:maxImageSize="24dp"
+            app:elevation="6dp" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:menu="@menu/bottom_navigation_menu"
+            app:itemIconTint="@color/bottom_nav_item_color"
+            app:itemTextColor="@color/bottom_nav_item_color"
+            app:labelVisibilityMode="unlabeled"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

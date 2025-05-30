@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="size_welcome">24sp</dimen>
+    <dimen name="size_hint_sign">12sp</dimen>
+    <dimen name="for_field_textsize">16sp</dimen>
+    <dimen name="_14sp">14sp</dimen>
+    <dimen name="_16sp">16sp</dimen>
+    <dimen name="fix_tools_out_of_bounds">-9.6dp</dimen>
+    <dimen name="for_tools_size_font">12sp</dimen>
+    <dimen name="notactive_icon_size_navbar">40dp</dimen>
+    <dimen name="grid_spacing">8dp</dimen>
+    <dimen name="product_width">230dp</dimen>
+</resources>

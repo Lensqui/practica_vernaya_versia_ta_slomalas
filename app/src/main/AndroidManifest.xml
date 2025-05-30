@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.INTERNET">
+    </uses-permission>
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/splash"
+        android:label="MATULE me"
+        android:roundIcon="@drawable/splash"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyApplication.NoActionBar"
+        tools:targetApi="31">
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ProfileActivity"/>
+        <activity android:name=".EnterPinActivity"/>
+        <activity android:name=".ConfirmPinActivity"/>
+        <activity android:name=".ForgotPasswordActivity"/>
+        <activity android:name=".PasswordResetActivity"/>
+        <activity android:name=".OtpVerificationActivity"/>
+        <activity android:name=".HomeActivity"/>
+        <activity android:name=".FavoritesActivity"/>
+        <activity android:name=".CategoryActivity"/>
+        <activity android:name=".CartActivity"/>
+        <activity android:name=".OrdersWithMapActivity"/>
+        <activity android:name=".OrderConfirmationActivity"/>
+        <activity android:name=".OrdersActivity"/>
+        <activity android:name=".SupportChatActivity"/>
+        <activity android:name=".NotificationsActivity"/>
+        <activity android:name=".SearchActivity" />
+        <activity android:name=".PopularActivity" />
+        <activity android:name=".PromotionActivity" />
+        <activity android:name=".ProductDetailActivity" />
+        <activity android:name=".VosstanovlPinKodaActivity" />
+        <activity android:name=".PasswordActivity" />
+        <activity android:name=".OnboardingActivity" />
+        <activity android:name=".MainActivity" />
+    </application>
+</manifest>

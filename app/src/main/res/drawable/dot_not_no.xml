@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <size
+                android:width="32dp"
+                android:height="32dp" />
+        </shape>
+    </item>
+    <item
+        android:drawable="@drawable/ic_notifications"
+        android:gravity="center" />
+    <item
+        android:left="328dp"
+        android:bottom="328dp">
+        <shape android:shape="oval">
+            <size
+                android:width="5dp"
+                android:height="5dp" />
+        </shape>
+    </item>
+</layer-list>
