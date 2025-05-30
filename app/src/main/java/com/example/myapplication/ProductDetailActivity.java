@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 import com.bumptech.glide.Glide;
 
@@ -40,10 +42,11 @@ public class ProductDetailActivity extends AppCompatActivity {
     private ImageView thumbnail1, thumbnail2, thumbnail3;
     private TextView productTitle, productPrice, productDescription, readMore;
     private ImageButton backButton, cartButton, btnAddFavorites;
-    private androidx.appcompat.widget.AppCompatButton addToCartButton;
+    private AppCompatButton addToCartButton;
     private String currentMainImageUrl = "";
     private String[] detailImageUrls = new String[3];
     private Product currentProduct;
+    private boolean isFavorite = false;
 
     public static final MediaType JSON = MediaType.get("application/json; charset=utf-8");
 
@@ -70,6 +73,8 @@ public class ProductDetailActivity extends AppCompatActivity {
         cartButton = findViewById(R.id.cart);
         btnAddFavorites = findViewById(R.id.btnAddFavorites);
         addToCartButton = findViewById(R.id.add_to_cart_button);
+
+        btnAddFavorites.setBackgroundResource(R.drawable.for_cartinok);
 
         String productId = getIntent().getStringExtra("product_id");
         if (productId != null) {
@@ -135,6 +140,8 @@ public class ProductDetailActivity extends AppCompatActivity {
                         detailImageUrls[1] = imageUrlForDetails2;
                         detailImageUrls[2] = imageUrlForDetails3;
 
+                        checkFavoriteStatus(productId, token);
+
                         mainHandler.post(() -> {
                             productTitle.setText(name);
                             productPrice.setText(price);
@@ -180,6 +187,35 @@ public class ProductDetailActivity extends AppCompatActivity {
             } catch (IOException | JSONException e) {
                 Log.e(TAG, "Error loading product details: " + e.getMessage());
                 mainHandler.post(() -> showErrorDialog("Ошибка загрузки данных: " + e.getMessage(), this::finish));
+            }
+        });
+    }
+
+    private void checkFavoriteStatus(String productId, String token) {
+        executor.execute(() -> {
+            try {
+                String url = BuildConfig.SUPABASE_URL + "/rest/v1/favorites?profile_id=eq." + profileId + "&product_id=eq." + productId + "&select=*";
+                Request request = new Request.Builder()
+                        .url(url)
+                        .get()
+                        .addHeader("apikey", BuildConfig.SUPABASE_API_KEY)
+                        .addHeader("Authorization", "Bearer " + token)
+                        .addHeader("Content-Type", "application/json")
+                        .build();
+                try (Response response = new OkHttpClient().newCall(request).execute()) {
+                    if (!response.isSuccessful()) {
+                        throw new IOException("Ошибка проверки избранного: " + response.message());
+                    }
+                    String responseBody = response.body().string();
+                    Log.d(TAG, "Favorite status response: " + responseBody);
+                    JSONArray favoritesArray = new JSONArray(responseBody);
+                    isFavorite = favoritesArray.length() > 0;
+                    mainHandler.post(() -> {
+                        btnAddFavorites.setBackgroundResource(isFavorite ? R.drawable.for_cartionok_add : R.drawable.for_cartinok);
+                    });
+                }
+            } catch (IOException | JSONException e) {
+                Log.e(TAG, "Error checking favorite status: " + e.getMessage());
             }
         });
     }
@@ -249,7 +285,7 @@ public class ProductDetailActivity extends AppCompatActivity {
             showErrorDialog("Ошибка: пользователь не авторизован", null);
             return;
         }
-        boolean isFavorite = btnAddFavorites.getBackground().getConstantState() != getResources().getDrawable(R.drawable.for_cartinok).getConstantState();
+
         executor.execute(() -> {
             try {
                 String token = localStorage.getToken();
@@ -257,6 +293,7 @@ public class ProductDetailActivity extends AppCompatActivity {
                     mainHandler.post(() -> showErrorDialog("Ошибка: токен отсутствует", null));
                     return;
                 }
+
                 if (isFavorite) {
                     String url = BuildConfig.SUPABASE_URL + "/rest/v1/favorites?profile_id=eq." + profileId + "&product_id=eq." + currentProduct.getId();
                     Request request = new Request.Builder()
@@ -268,9 +305,12 @@ public class ProductDetailActivity extends AppCompatActivity {
                             .build();
                     try (Response response = new OkHttpClient().newCall(request).execute()) {
                         if (!response.isSuccessful()) {
+                            String errorBody = response.body() != null ? response.body().string() : "Нет тела ошибки";
+                            Log.e(TAG, "Delete favorite error: " + response.code() + " - " + errorBody);
                             throw new IOException("Ошибка удаления из избранного: " + response.message());
                         }
                         mainHandler.post(() -> {
+                            isFavorite = false;
                             btnAddFavorites.setBackgroundResource(R.drawable.for_cartinok);
                             Toast.makeText(this, "Удалено из избранного", Toast.LENGTH_SHORT).show();
                         });
@@ -289,9 +329,12 @@ public class ProductDetailActivity extends AppCompatActivity {
                             .build();
                     try (Response response = new OkHttpClient().newCall(request).execute()) {
                         if (!response.isSuccessful()) {
+                            String errorBody = response.body() != null ? response.body().string() : "Нет тела ошибки";
+                            Log.e(TAG, "Add favorite error: " + response.code() + " - " + errorBody);
                             throw new IOException("Ошибка добавления в избранное: " + response.message());
                         }
                         mainHandler.post(() -> {
+                            isFavorite = true;
                             btnAddFavorites.setBackgroundResource(R.drawable.for_cartionok_add);
                             Toast.makeText(this, "Добавлено в избранное", Toast.LENGTH_SHORT).show();
                         });

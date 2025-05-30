@@ -50,8 +50,8 @@
 
                 <ImageButton
                     android:id="@+id/handba"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
                     android:background="@drawable/for_cart_not_dot"
                     android:padding="19dp"
                     android:layout_marginTop="11dp"
@@ -85,7 +85,7 @@
                     android:background="@drawable/crug"
                     android:padding="16dp"
                     android:src="@drawable/filters_32"
-                    android:layout_marginTop="25dp"
+                    android:layout_marginTop="32dp"
                     android:layout_marginStart="15dp"
                     app:layout_constraintStart_toEndOf="@id/editexttext2"
                     app:layout_constraintTop_toBottomOf="@id/handba"/>
