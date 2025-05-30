@@ -7,6 +7,7 @@
     android:padding="16dp">
 
     <ImageButton
+        android:visibility="invisible"
         android:id="@+id/btnBack"
         android:layout_width="32dp"
         android:layout_height="32dp"
@@ -33,7 +34,7 @@
         android:id="@+id/subtitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Заполните свои данные или \nпродолжите через социальные медиа"
+        android:text="Заполните свои данные для входа \nили зарегестрируйтесь"
         android:textSize="14sp"
         android:gravity="center"
         app:layout_constraintLeft_toLeftOf="parent"

@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.text.SpannableString;
+import android.text.style.UnderlineSpan;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -54,6 +56,11 @@ public class RegisterFragment extends Fragment {
         localStorage = LocalStorage.getInstance();
         executorService = Executors.newSingleThreadExecutor();
         mainHandler = new Handler(Looper.getMainLooper());
+
+        String agreementText = "Даю согласие на обработку персональных данных";
+        SpannableString spannableString = new SpannableString(agreementText);
+        spannableString.setSpan(new UnderlineSpan(), 0, agreementText.length(), 0);
+        cbAgreement.setText(spannableString);
 
         btnRegister.setOnClickListener(v -> handleRegister());
         tvLogin2.setOnClickListener(v -> {
